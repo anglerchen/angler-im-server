@@ -1,0 +1,60 @@
+server:
+  port: 8877
+  id: 1
+
+spring:
+  redis:
+    database: 0
+    host: 160.202.230.232
+    port: 6380
+    password: hangchen@@
+    timeout: 30000
+    lettuce:
+      pool:
+        enabled: true
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 5000
+    address: redis://160.202.230.232:6380
+
+websocket:
+  enable: true
+  port: 8878
+
+tcpsocket:
+  enable: false # 暂时不开启
+  port: 8879
+
+heartbeat:
+  count: 10
+
+jwt:
+  accessToken:
+    secret: binghe123
+
+rocketmq:
+  name-server: 160.202.230.232:9876
+  producer:
+    group: im-server-group
+
+local:
+  cache:
+    type: guava
+
+distribute:
+  cache:
+    type: redis
+  lock:
+    type: redisson
+
+redis:
+  arrange:
+    type: single # single or cluster
+
+message:
+  mq:
+    event:
+      type: rocketmq
+    type: rocketmq
+
