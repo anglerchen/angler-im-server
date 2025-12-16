@@ -1,9 +1,9 @@
 package io.angler.im.server.application.consumer;
 
 import cn.hutool.core.util.StrUtil;
-import io.angler.im.common.domain.constants.IMConstants;
-import io.angler.im.common.domain.enums.IMCmdType;
-import io.angler.im.common.domain.model.IMReceiveInfo;
+import com.jc.angler.im.common.domain.constants.IMConstants;
+import com.jc.angler.im.common.domain.enums.IMCmdType;
+import com.jc.angler.im.common.domain.model.IMReceiveInfo;
 import io.angler.im.server.application.netty.processor.MessageProcessor;
 import io.angler.im.server.application.netty.processor.factory.ProcessorFactory;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;

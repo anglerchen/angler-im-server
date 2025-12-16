@@ -1,9 +1,9 @@
 package io.angler.im.server.application.netty.handler;
 
-import io.angler.im.common.cache.distribute.DistributedCacheService;
-import io.angler.im.common.domain.constants.IMConstants;
-import io.angler.im.common.domain.enums.IMCmdType;
-import io.angler.im.common.domain.model.IMSendInfo;
+import com.jc.angler.im.common.cache.distribute.DistributedCacheService;
+import com.jc.angler.im.common.domain.constants.IMConstants;
+import com.jc.angler.im.common.domain.enums.IMCmdType;
+import com.jc.angler.im.common.domain.model.IMSendInfo;
 import io.angler.im.server.application.netty.cache.UserChannelContextCache;
 import io.angler.im.server.application.netty.processor.MessageProcessor;
 import io.angler.im.server.application.netty.processor.factory.ProcessorFactory;

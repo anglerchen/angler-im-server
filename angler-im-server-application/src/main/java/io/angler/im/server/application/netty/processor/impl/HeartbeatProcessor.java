@@ -1,11 +1,11 @@
 package io.angler.im.server.application.netty.processor.impl;
 
 import cn.hutool.core.bean.BeanUtil;
-import io.angler.im.common.cache.distribute.DistributedCacheService;
-import io.angler.im.common.domain.constants.IMConstants;
-import io.angler.im.common.domain.enums.IMCmdType;
-import io.angler.im.common.domain.model.IMHeartbeatInfo;
-import io.angler.im.common.domain.model.IMSendInfo;
+import com.jc.angler.im.common.cache.distribute.DistributedCacheService;
+import com.jc.angler.im.common.domain.constants.IMConstants;
+import com.jc.angler.im.common.domain.enums.IMCmdType;
+import com.jc.angler.im.common.domain.model.IMHeartbeatInfo;
+import com.jc.angler.im.common.domain.model.IMSendInfo;
 import io.angler.im.server.application.netty.processor.MessageProcessor;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;

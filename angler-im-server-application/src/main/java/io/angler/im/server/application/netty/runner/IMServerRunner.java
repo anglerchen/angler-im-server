@@ -2,11 +2,11 @@ package io.angler.im.server.application.netty.runner;
 
 import cn.hutool.core.collection.CollectionUtil;
 import io.angler.im.server.application.netty.IMNettyServer;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PreDestroy;
 import java.util.List;
 
 @Component

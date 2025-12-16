@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableAsync
 @EnableScheduling
-@ComponentScan(basePackages={"io.angler.im", "com.alibaba.cola"})
+@ComponentScan(basePackages={"io.angler.im", "com.jc","com.alibaba.cola"})
 @SpringBootApplication
 public class IMServerStarter {
 

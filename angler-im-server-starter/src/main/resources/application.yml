@@ -3,20 +3,21 @@ server:
   id: 1
 
 spring:
-  redis:
-    database: 0
-    host: 160.202.230.232
-    port: 6380
-    password: hangchen@@
-    timeout: 30000
-    lettuce:
-      pool:
-        enabled: true
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-        max-wait: 5000
-    address: redis://160.202.230.232:6380
+  data:
+    redis:
+      database: 6
+      host: 160.202.230.232
+      port: 6380
+      password: hangchen@@
+      timeout: 30000
+      lettuce:
+        pool:
+          enabled: true
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: 5000
+      address: redis://160.202.230.232:6380
 
 websocket:
   enable: true

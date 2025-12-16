@@ -1,6 +1,6 @@
 package io.angler.im.server.application.netty.processor.factory;
 
-import io.angler.im.common.domain.enums.IMCmdType;
+import com.jc.angler.im.common.domain.enums.IMCmdType;
 import io.angler.im.server.application.netty.processor.MessageProcessor;
 import io.angler.im.server.application.netty.processor.impl.GroupMessageProcessor;
 import io.angler.im.server.application.netty.processor.impl.HeartbeatProcessor;

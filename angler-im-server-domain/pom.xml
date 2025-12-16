@@ -12,9 +12,9 @@
     <artifactId>angler-im-server-domain</artifactId>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.compilerVersion>3.14.0</maven.compiler.compilerVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <netty.version>4.1.42.Final</netty.version>
@@ -24,13 +24,13 @@
         <dependency>
             <groupId>io.github.anglerchen</groupId>
             <artifactId>angler-im-common-cache</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.3</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.anglerchen</groupId>
             <artifactId>angler-im-common-mq</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.3</version>
         </dependency>
 
         <dependency>

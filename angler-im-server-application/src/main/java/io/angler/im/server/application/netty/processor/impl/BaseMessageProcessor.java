@@ -1,11 +1,11 @@
 package io.angler.im.server.application.netty.processor.impl;
 
-import io.angler.im.common.domain.constants.IMConstants;
-import io.angler.im.common.domain.enums.IMSendCode;
-import io.angler.im.common.domain.model.IMReceiveInfo;
-import io.angler.im.common.domain.model.IMSendResult;
-import io.angler.im.common.domain.model.IMUserInfo;
-import io.angler.im.common.mq.MessageSenderService;
+import com.jc.angler.im.common.domain.constants.IMConstants;
+import com.jc.angler.im.common.domain.enums.IMSendCode;
+import com.jc.angler.im.common.domain.model.IMReceiveInfo;
+import com.jc.angler.im.common.domain.model.IMSendResult;
+import com.jc.angler.im.common.domain.model.IMUserInfo;
+import com.jc.angler.im.common.mq.MessageSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class BaseMessageProcessor {

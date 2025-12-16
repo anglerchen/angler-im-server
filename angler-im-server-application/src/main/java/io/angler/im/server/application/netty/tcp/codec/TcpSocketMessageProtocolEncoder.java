@@ -1,7 +1,7 @@
 package io.angler.im.server.application.netty.tcp.codec;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.angler.im.common.domain.model.IMSendInfo;
+import com.jc.angler.im.common.domain.model.IMSendInfo;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;

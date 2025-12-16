@@ -1,8 +1,8 @@
 package io.angler.im.server.application.consumer;
 
 import com.alibaba.fastjson.JSONObject;
-import io.angler.im.common.domain.constants.IMConstants;
-import io.angler.im.common.domain.model.IMReceiveInfo;
+import com.jc.angler.im.common.domain.constants.IMConstants;
+import com.jc.angler.im.common.domain.model.IMReceiveInfo;
 
 public class BaseMessageConsumer {
     /**

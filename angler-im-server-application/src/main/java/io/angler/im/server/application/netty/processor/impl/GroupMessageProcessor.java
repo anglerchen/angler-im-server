@@ -1,10 +1,10 @@
 package io.angler.im.server.application.netty.processor.impl;
 
-import io.angler.im.common.domain.enums.IMCmdType;
-import io.angler.im.common.domain.enums.IMSendCode;
-import io.angler.im.common.domain.model.IMReceiveInfo;
-import io.angler.im.common.domain.model.IMSendInfo;
-import io.angler.im.common.domain.model.IMUserInfo;
+import com.jc.angler.im.common.domain.enums.IMCmdType;
+import com.jc.angler.im.common.domain.enums.IMSendCode;
+import com.jc.angler.im.common.domain.model.IMReceiveInfo;
+import com.jc.angler.im.common.domain.model.IMSendInfo;
+import com.jc.angler.im.common.domain.model.IMUserInfo;
 import io.angler.im.server.application.netty.cache.UserChannelContextCache;
 import io.angler.im.server.application.netty.processor.MessageProcessor;
 import io.netty.channel.ChannelHandlerContext;
