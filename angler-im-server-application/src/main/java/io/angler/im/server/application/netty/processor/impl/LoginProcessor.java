@@ -2,22 +2,20 @@ package io.angler.im.server.application.netty.processor.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.json.JSONUtil;
-import com.alibaba.fastjson.JSON;
 import com.jc.angler.im.common.cache.distribute.DistributedCacheService;
 import com.jc.angler.im.common.domain.constants.IMConstants;
 import com.jc.angler.im.common.domain.enums.IMCmdType;
-import com.jc.angler.im.common.domain.jwt.JwtUtils;
 import com.jc.angler.im.common.domain.model.IMLoginInfo;
 import com.jc.angler.im.common.domain.model.IMSendInfo;
-import com.jc.angler.im.common.domain.model.IMSessionInfo;
 import io.angler.im.server.application.netty.cache.UserChannelContextCache;
-import io.angler.im.server.application.netty.model.AnglerUser;
+import com.jc.angler.common.security.service.AnglerUser;
 import io.angler.im.server.application.netty.processor.MessageProcessor;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
@@ -44,19 +42,22 @@ public class LoginProcessor implements MessageProcessor<IMLoginInfo> {
     private DistributedCacheService distributedCacheService;
 
     @Autowired
+    @Qualifier("redisTemplate")
     protected RedisTemplate<String, Object> redisTemplate3;
 
 
     @Override
     public synchronized void process(ChannelHandlerContext ctx, IMLoginInfo loginInfo) {
         //登录Token检验未通过
-        if (!JwtUtils.checkSign(loginInfo.getAccessToken(), accessTokenSecret)){
-            ctx.channel().close();
-            logger.warn("LoginProcessor.process|用户登录信息校验未通过,强制用户下线,token:{}", loginInfo.getAccessToken());
-        }
-        String key = 1 + "::token::access_token::" + loginInfo.getAccessToken();
+//        if (!JwtUtils.checkSign(loginInfo.getAccessToken(), accessTokenSecret)){
+//            ctx.channel().close();
+//            logger.warn("LoginProcessor.process|用户登录信息校验未通过,强制用户下线,token:{}", loginInfo.getAccessToken());
+//        }
+        String key = "token::access_token::" + loginInfo.getAccessToken();
         redisTemplate3.setValueSerializer(RedisSerializer.java());
         if (!redisTemplate3.hasKey(key)) {
+            logger.warn("LoginProcessor.process|用户登录信息校验未通过,强制用户下线,token:{}", loginInfo.getAccessToken());
+            ctx.channel().close();
             logger.warn("LoginProcessor.process|用户登录信息校验未通过,强制用户下线,token:{}", loginInfo.getAccessToken());
         }
         AnglerUser anglerUser = null;
@@ -107,7 +108,7 @@ public class LoginProcessor implements MessageProcessor<IMLoginInfo> {
 
         //记录用户的channelId
         String redisKey = String.join(IMConstants.REDIS_KEY_SPLIT, IMConstants.IM_USER_SERVER_ID, userId.toString(), terminal.toString());
-        distributedCacheService.set(redisKey, serverId, IMConstants.ONLINE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+        distributedCacheService.set(redisKey, serverId, IMConstants.ONLINE_TIMEOUT_SECONDS, TimeUnit.HOURS);
 
         //响应ws
         IMSendInfo<?> imSendInfo = new IMSendInfo<>();

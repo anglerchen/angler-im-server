@@ -146,7 +146,24 @@
         </dependencies>
 
     </dependencyManagement>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-authorization-server</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.security</groupId>
+                    <artifactId>spring-security-config</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

@@ -15,7 +15,7 @@
  * Author: angler
  */
 
-package io.angler.im.server.application.netty.model;
+package com.jc.angler.common.security.service;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

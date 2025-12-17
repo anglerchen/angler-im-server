@@ -21,16 +21,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-oauth2-authorization-server</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.security</groupId>
-                    <artifactId>spring-security-config</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
             <groupId>com.jc</groupId>
             <artifactId>angler-im-server-infrastructure</artifactId>
             <version>${project.version}</version>

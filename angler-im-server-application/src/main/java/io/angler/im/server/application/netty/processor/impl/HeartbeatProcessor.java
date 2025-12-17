@@ -39,7 +39,7 @@ public class HeartbeatProcessor implements MessageProcessor<IMHeartbeatInfo> {
             AttributeKey<Integer> terminalAttr = AttributeKey.valueOf(IMConstants.TERMINAL_TYPE);
             Integer terminal = ctx.channel().attr(terminalAttr).get();
             String redisKey = String.join(IMConstants.REDIS_KEY_SPLIT, IMConstants.IM_USER_SERVER_ID, userId.toString(), terminal.toString());
-            distributedCacheService.expire(redisKey, IMConstants.ONLINE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+            distributedCacheService.expire(redisKey, IMConstants.ONLINE_TIMEOUT_SECONDS, TimeUnit.HOURS);
         }
     }
 
